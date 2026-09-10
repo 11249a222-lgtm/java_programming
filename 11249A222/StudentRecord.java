@@ -1,27 +1,19 @@
-class Student {
-    // Fields
-    String studentName;
-    int rollNumber;
+// Student information class
+class StudentInfo {
+
+    String name;
+    int rollNo;
     int marks;
 
     // Constructor
-    Student(String studentName, int rollNumber, int marks) {
-        this.studentName = studentName;
-        this.rollNumber = rollNumber;
+    StudentInfo(String name, int rollNo, int marks) {
+        this.name = name;
+        this.rollNo = rollNo;
         this.marks = marks;
     }
 
-    // Method to display student information
-    void displayInfo() {
-        System.out.println("Student Name : " + studentName);
-        System.out.println("Roll Number  : " + rollNumber);
-        System.out.println("Marks        : " + marks);
-        System.out.println("Grade        : " + calculateGrade());
-        System.out.println();
-    }
-
     // Method to calculate grade
-    char calculateGrade() {
+    char getGrade() {
         if (marks >= 90)
             return 'A';
         else if (marks >= 80)
@@ -35,15 +27,25 @@ class Student {
         else
             return 'F';
     }
+
+    // Method to display student information
+    void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Roll No: " + rollNo);
+        System.out.println("Marks: " + marks);
+        System.out.println("Grade: " + getGrade());
+        System.out.println();
+    }
 }
 
 // Main class
 public class StudentRecord {
+
     public static void main(String[] args) {
 
         // Creating student objects
-        Student student1 = new Student("Arun", 101, 92);
-        Student student2 = new Student("Priya", 102, 78);
+        StudentInfo student1 = new StudentInfo("Arun", 101, 92);
+        StudentInfo student2 = new StudentInfo("Priya", 102, 78);
 
         // Displaying student details and grades
         student1.displayInfo();
